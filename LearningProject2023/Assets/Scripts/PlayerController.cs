@@ -8,13 +8,12 @@ public class PlayerController : MonoBehaviour
     public float horizontalInput;
 
     public float speed = 20.0f;
-    public float jumpForce;
-
+    public float jumpForce = 10f;
     public float xRange = 13.0f;
-    public GameObject projectilePrefab;
 
     public bool isOnGround = true;
     public bool isOnPlatform = true;
+    public bool isShooting = false;
 
     private Rigidbody playerRb;
     
@@ -34,20 +33,28 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-        }
-
+        
         horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * (horizontalInput * Time.deltaTime * speed));
+        if (!isShooting)
+        {
+            transform.Translate(Vector3.right * (horizontalInput * Time.deltaTime * speed));
+        }
+        
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && (isOnGround || isOnPlatform))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && (isOnGround || isOnPlatform) && (!isShooting))
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
             isOnPlatform = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            isShooting = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            isShooting = false;
         }
     }
 
