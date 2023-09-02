@@ -375,8 +375,8 @@ MonoBehaviour:
   isShooting: 0
   barrelEnd: {fileID: 1650344541}
   ogPosition: {x: 0, y: 0, z: 0, w: 0}
-  rotationSpeed: 800
-  shootForce: 600
+  rotationSpeed: 600
+  shootForce: 800
   playSound:
     m_PersistentCalls:
       m_Calls:
