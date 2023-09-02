@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FiringProjectile : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class FiringProjectile : MonoBehaviour
     public Quaternion ogPosition;
     public float rotationSpeed = 10f;
     public float shootForce = 200f;
+    public UnityEvent playSound;
 
     private void Start()
     {
@@ -47,6 +49,7 @@ public class FiringProjectile : MonoBehaviour
 
     void ShootProjectile()
     {
+        playSound.Invoke();
         Rigidbody projectileInstance;
         projectileInstance = Instantiate(projectilePrefab, barrelEnd.position, barrelEnd.rotation);
         projectileInstance.AddForce(barrelEnd.up * shootForce);
