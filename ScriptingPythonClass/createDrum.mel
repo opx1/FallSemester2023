@@ -1,0 +1,102 @@
+//create base cylinder
+polyCylinder -radius 1 -height 1.2 -subdivisionsX 20 -subdivisionsY 6 -subdivisionsZ 1 -axis 0 1 0 -roundCap 0 -createUVs 3 -constructionHistory 1;
+move -relative 0 0.6 0 ;
+
+//select side faces to extrude
+select -replace pCylinder1.f[100:119] ;
+select -add pCylinder1.f[0:19] ;
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -1.192092896e-07 -pvy 0.6 -pvz -1.788139343e-07 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pCylinder1.f[0:19] pCylinder1.f[100:119];
+// Result: polyExtrudeFace1
+setAttr "polyExtrudeFace1.thickness" 0.04;
+
+//select top
+select -replace pCylinder1.f[140:159] ;
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -1.192092896e-07 -pvy 1.200000024 -pvz -1.788139343e-07 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pCylinder1.f[140:159];
+// Result: polyExtrudeFace2
+setAttr "polyExtrudeFace2.offset" 0.04;
+setAttr "polyExtrudeFace2.thickness" -0.21;
+
+// select side faces to extrude
+select -replace pCylinder1.f[78] pCylinder1.f[58] pCylinder1.f[60] pCylinder1.f[40] pCylinder1.f[62] pCylinder1.f[42] pCylinder1.f[64] pCylinder1.f[44] pCylinder1.f[66] pCylinder1.f[46] pCylinder1.f[68] pCylinder1.f[48] pCylinder1.f[70] pCylinder1.f[50] pCylinder1.f[72] pCylinder1.f[52] pCylinder1.f[74] pCylinder1.f[54] pCylinder1.f[76] pCylinder1.f[56];
+// extruding these faces multiple times
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -1.192092896e-07 -pvy 0.5999999702 -pvz -1.788139343e-07 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pCylinder1.f[40] pCylinder1.f[42] pCylinder1.f[44] pCylinder1.f[46] pCylinder1.f[48] pCylinder1.f[50] pCylinder1.f[52] pCylinder1.f[54] pCylinder1.f[56] pCylinder1.f[58] pCylinder1.f[60] pCylinder1.f[62] pCylinder1.f[64] pCylinder1.f[66] pCylinder1.f[68] pCylinder1.f[70] pCylinder1.f[72] pCylinder1.f[74] pCylinder1.f[76] pCylinder1.f[78];
+// Result: polyExtrudeFace3
+setAttr "polyExtrudeFace3.offset" 0.05;
+select -r pCylinder1.f[40] pCylinder1.f[42] pCylinder1.f[44] pCylinder1.f[46] pCylinder1.f[48] pCylinder1.f[50] pCylinder1.f[52] pCylinder1.f[54] pCylinder1.f[56] pCylinder1.f[58] pCylinder1.f[60] pCylinder1.f[62] pCylinder1.f[64] pCylinder1.f[66] pCylinder1.f[68] pCylinder1.f[70] pCylinder1.f[72] pCylinder1.f[74] pCylinder1.f[76] pCylinder1.f[78] ;
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -1.192092896e-07 -pvy 0.5999999702 -pvz -1.788139343e-07 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pCylinder1.f[40] pCylinder1.f[42] pCylinder1.f[44] pCylinder1.f[46] pCylinder1.f[48] pCylinder1.f[50] pCylinder1.f[52] pCylinder1.f[54] pCylinder1.f[56] pCylinder1.f[58] pCylinder1.f[60] pCylinder1.f[62] pCylinder1.f[64] pCylinder1.f[66] pCylinder1.f[68] pCylinder1.f[70] pCylinder1.f[72] pCylinder1.f[74] pCylinder1.f[76] pCylinder1.f[78];
+// Result: polyExtrudeFace4
+setAttr "polyExtrudeFace4.thickness" 0.05;
+select -r pCylinder1.f[40] pCylinder1.f[42] pCylinder1.f[44] pCylinder1.f[46] pCylinder1.f[48] pCylinder1.f[50] pCylinder1.f[52] pCylinder1.f[54] pCylinder1.f[56] pCylinder1.f[58] pCylinder1.f[60] pCylinder1.f[62] pCylinder1.f[64] pCylinder1.f[66] pCylinder1.f[68] pCylinder1.f[70] pCylinder1.f[72] pCylinder1.f[74] pCylinder1.f[76] pCylinder1.f[78] ;
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -1.192092896e-07 -pvy 0.5999999702 -pvz -1.788139343e-07 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pCylinder1.f[40] pCylinder1.f[42] pCylinder1.f[44] pCylinder1.f[46] pCylinder1.f[48] pCylinder1.f[50] pCylinder1.f[52] pCylinder1.f[54] pCylinder1.f[56] pCylinder1.f[58] pCylinder1.f[60] pCylinder1.f[62] pCylinder1.f[64] pCylinder1.f[66] pCylinder1.f[68] pCylinder1.f[70] pCylinder1.f[72] pCylinder1.f[74] pCylinder1.f[76] pCylinder1.f[78];
+// Result: polyExtrudeFace5
+setAttr "polyExtrudeFace5.offset" 0.04;
+select -r pCylinder1.f[40] pCylinder1.f[42] pCylinder1.f[44] pCylinder1.f[46] pCylinder1.f[48] pCylinder1.f[50] pCylinder1.f[52] pCylinder1.f[54] pCylinder1.f[56] pCylinder1.f[58] pCylinder1.f[60] pCylinder1.f[62] pCylinder1.f[64] pCylinder1.f[66] pCylinder1.f[68] pCylinder1.f[70] pCylinder1.f[72] pCylinder1.f[74] pCylinder1.f[76] pCylinder1.f[78] ;
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -1.192092896e-07 -pvy 0.5999999851 -pvz -1.788139343e-07 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pCylinder1.f[40] pCylinder1.f[42] pCylinder1.f[44] pCylinder1.f[46] pCylinder1.f[48] pCylinder1.f[50] pCylinder1.f[52] pCylinder1.f[54] pCylinder1.f[56] pCylinder1.f[58] pCylinder1.f[60] pCylinder1.f[62] pCylinder1.f[64] pCylinder1.f[66] pCylinder1.f[68] pCylinder1.f[70] pCylinder1.f[72] pCylinder1.f[74] pCylinder1.f[76] pCylinder1.f[78];
+// Result: polyExtrudeFace6
+setAttr "polyExtrudeFace6.thickness" 0.1;
+
+//create side rods cylinder
+polyCylinder -radius .022 -height 1.2 -subdivisionsX 20 -subdivisionsY 12 -subdivisionsZ 1 -axis 0 1 0 -roundCap 0 -createUVs 3 -constructionHistory 1;
+move -relative 1.08 0.6 0.17 ;
+//extrude sides that connect to drum
+select -replace pCylinder2.f[208] pCylinder2.f[28];
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx 1.058538373 -pvy 0.5999999851 -pvz 0.1666008123 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pCylinder2.f[28] pCylinder2.f[208];
+// Result: polyExtrudeFace7
+setAttr "polyExtrudeFace7.localTranslateZ" 0.01;
+setAttr "polyExtrudeFace7.localScaleY" .8;
+select -r pCylinder2.f[28] pCylinder2.f[208] ;
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx 1.048661427 -pvy 0.6 -pvz 0.1650365499 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pCylinder2.f[28] pCylinder2.f[208];
+// Result: polyExtrudeFace8
+setAttr "polyExtrudeFace8.localTranslateZ" 0.02;
+setAttr "polyExtrudeFace8.localScaleY" .7;
+select -r pCylinder2.f[28] pCylinder2.f[208] ;
+polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx 1.028907733 -pvy 0.5999999553 -pvz 0.1619080213 -divisions 1 -twist 0 -taper 1 -off 0 -thickness 0 -smoothingAngle 30 pCylinder2.f[28] pCylinder2.f[208];
+// Result: polyExtrudeFace9
+setAttr "polyExtrudeFace9.localTranslateZ" 0.03;
+setAttr "polyExtrudeFace9.localScaleY" .7;
+//adjust the top
+select -r pCylinder2.f[260:279] ;
+select -add pCylinder2.f[240:259] ;
+scale -r -p 1.08cm 0.6cm 0.17cm 0.286037 0.978718 0.286037 ;
+delete `polyMoveVertex -ch 1 |pCylinder2|pCylinderShape2.vtx[0]`; polySplit -ch 1 -sma 180 -ep 480 0.5 -ep 499 0.5 -ep 498 0.5 -ep 497 0.5 -ep 496 0.5 -ep 495 0.5 -ep 494 0.5 -ep 493 0.5 -ep 492 0.5 -ep 491 0.5 -ep 490 0.5 -ep 489 0.5 -ep 488 0.5 -ep 487 0.5 -ep 486 0.5 -ep 485 0.5 -ep 484 0.5 -ep 483 0.5 -ep 482 0.5 -ep 481 0.5 -ep 480 0.5 |pCylinder2|pCylinderShape2;  select -cl;
+delete `polyMoveVertex -ch 1 |pCylinder2|pCylinderShape2.vtx[0]`; polySplit -ch 1 -sma 180 -ep 260 0.5 -ep 279 0.5 -ep 278 0.5 -ep 277 0.5 -ep 276 0.5 -ep 275 0.5 -ep 274 0.5 -ep 273 0.5 -ep 272 0.5 -ep 271 0.5 -ep 270 0.5 -ep 269 0.5 -ep 268 0.5 -ep 267 0.5 -ep 266 0.5 -ep 265 0.5 -ep 264 0.5 -ep 263 0.5 -ep 262 0.5 -ep 261 0.5 -ep 260 0.5 |pCylinder2|pCylinderShape2;  select -cl;
+select -replace pCylinder2.e[608:627] ;
+select -add pCylinder2.e[648:667] ;
+scale -r -p 1.08cm 0.6cm 0.17cm 0.802113 1 0.802113 ;
+
+//move rotate pivot
+select -r pCylinder2 ;
+move -r -1.08 0 -0.17 pCylinder2.scalePivot pCylinder2.rotatePivot ;
+//duplicate and rotate rods
+duplicate -rr;
+// Result: pCylinder3 //
+rotate -r -os -fo 0 36 0 ;
+duplicate -rr;
+// Result: pCylinder4 //
+rotate -r -os -fo 0 36 0 ;
+duplicate -rr;
+// Result: pCylinder5 //
+rotate -r -os -fo 0 36 0 ;
+duplicate -rr;
+// Result: pCylinder6 //
+rotate -r -os -fo 0 36 0 ;
+duplicate -rr;
+// Result: pCylinder7 //
+rotate -r -os -fo 0 36 0 ;
+duplicate -rr;
+// Result: pCylinder8 //
+rotate -r -os -fo 0 36 0 ;
+duplicate -rr;
+// Result: pCylinder9 //
+rotate -r -os -fo 0 36 0 ;
+duplicate -rr;
+// Result: pCylinder10 //
+rotate -r -os -fo 0 36 0 ;
+duplicate -rr;
+// Result: pCylinder11 //
+rotate -r -os -fo 0 36 0 ;
+
+//parent the rods to the drum
+select -r pCylinder2 pCylinder9 pCylinder3 pCylinder7 pCylinder6 pCylinder11 pCylinder10 pCylinder8 pCylinder4 pCylinder5 pCylinder1 ;
+parent;
+// Result: pCylinder2 pCylinder9 pCylinder3 pCylinder7 pCylinder6 pCylinder11 pCylinder10 pCylinder8 pCylinder4 pCylinder5
