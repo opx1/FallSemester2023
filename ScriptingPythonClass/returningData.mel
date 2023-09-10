@@ -1,0 +1,12 @@
+print (`ls -selection`);
+
+string $object[];
+$object = `polySphere -r 1 -sx 20 -sy 20 -ax 0 1 0 -cuv 2 -ch 1`;
+print ($object);
+
+move -relative 0.9 6.6 -5.9 $object[0];
+
+float $radius = `polySphere -q -radius $object[0]`;
+print ($radius);
+
+polySphere -e -radius ($radius - 2.3) $object[0];
