@@ -1,0 +1,13 @@
+float $size = 3;
+
+//create base sphere
+polySphere -radius $size -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -relative 0 $size 0;
+
+//cread middle sphere
+polySphere -radius ($size - ($size*.3333)) -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -r 0 ($size * 2.16666) 0 ;
+
+//create head sphere
+polySphere -radius ($size-($size*.56666)) -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
+move -relative 0 ($size*3) 0;

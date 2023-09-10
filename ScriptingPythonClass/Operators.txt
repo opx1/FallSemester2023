@@ -1,0 +1,67 @@
+Operators
+
+Arithmetic
+
++ : Addition 3 + 5 => 8; ("Hello" + "World") => "Hello World";
+
+- : Subtraction 7.3 - 2.1 => 5.2
+
+* : Multiplication 3*5 => 15
+
+/ : Division 15/3 => 5
+
+++ : Increment
+                int $num = 13;
+                $num++; //$num is now 14
+                //$num = $num + 1;
+
+-- : Decrement
+                int $num = 13
+                $num--; //$num is now 12
+
+% : Modulus 13 % 5 => 3
+            13 / 5 => 2
+
+^ : Power 3 ^ 2 //3*3
+
+
+---Assignment---
+
+= : Assignment (from right to left)
+                int $num = 5;
+
++= : Add value to variable and reassign to variable
+        int $num = 0;
+        $num = $num + 10;
+        $num += 10;
+
+-+ : Subtract value to variable and reassign to variable
+
+*= : Multiply
+/= : Divide
+%= : Modulus
+^= : Power
+
+
+---Comparison---
+
+== : Equal to 3==5 //false (returns True or False : 1 or 0)
+
+!= : Not equal to 3 != 5 //true
+
+> : Greater than 3 > 5 //false
+
+< : Less than 3 < 5 //true
+
+>= : Greater than or equal to
+
+<= : Less than or equal to
+
+---Logical---
+Returns True or False : 1 or 0
+
+&& : And
+
+|| : Or
+
+! : Not
