@@ -1,19 +1,30 @@
-float $size = 5;
-
+{float $size = 3;
+$size = `rand 2 5`;
+print $size;
+float $randomPlacez = `rand -10 10`;
+float $randomPlacex = `rand -10 10`;
+int $randomHat;
+$randomHat = `rand(5)`;
+print $randomHat;
 
 //create base sphere
 polySphere -radius $size -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
-move -relative 0 $size 0;
+move -relative $randomPlacex $size $randomPlacez;
 
 //cread middle sphere
 polySphere -radius ($size - ($size*.3333)) -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
-move -r 0 ($size * 2.16666) 0 ;
+move -r $randomPlacex ($size * 2.16666) $randomPlacez ;
 
 //create head sphere
 polySphere -radius ($size-($size*.56666)) -subdivisionsX 20 -subdivisionsY 20 -axis 0 1 0 -createUVs 2 -constructionHistory 1;
-move -relative 0 ($size*3) 0;
+move -relative $randomPlacex ($size*3) $randomPlacez;
 
-//create hat
+
+
+//random hat generator
+if ($randomHat > 3)
+{
+   //create hat
 string $hats[] = `polyCylinder -r ($size * .3333) -h ($size - ($size*.3333)) -sx 20 -sy 10 -sz 1 -ax 0 1 0 -rcp 0 -cuv 3 -ch 1`;
 // Result: pCylinder1 polyCylinder1
 string $hat = $hats[0];
@@ -21,7 +32,6 @@ print ($hat);
 select -replace $hat.f[0:19] ;
 string $selection[] = `ls -fl -sl`;
 polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -1.192092896e-07 -pvy -0.900000006 -pvz -1.788139343e-07 -divisions 1 -twist 0 -taper 1 -off 0 -thickness ($size * .21) -smoothingAngle 30 ($hat + ".f[0:19]");
-move -r 0 ($size * 3.63333) 0 $hat;
-
-// Result: polyExtrudeFace1
-//($size * .21)
+move -r $randomPlacex ($size * 3.63333) $randomPlacez $hat;
+}
+}
