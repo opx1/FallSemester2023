@@ -1,4 +1,4 @@
-float $size = 5;
+float $size = 3;
 
 
 //create base sphere
@@ -19,7 +19,6 @@ string $hats[] = `polyCylinder -r ($size * .3333) -h ($size - ($size*.3333)) -sx
 string $hat = $hats[0];
 print ($hat);
 select -replace $hat.f[0:19] ;
-string $selection[] = `ls -fl -sl`;
 polyExtrudeFacet -constructionHistory 1 -keepFacesTogether 1 -pvx -1.192092896e-07 -pvy -0.900000006 -pvz -1.788139343e-07 -divisions 1 -twist 0 -taper 1 -off 0 -thickness ($size * .21) -smoothingAngle 30 ($hat + ".f[0:19]");
 move -r 0 ($size * 3.63333) 0 $hat;
 

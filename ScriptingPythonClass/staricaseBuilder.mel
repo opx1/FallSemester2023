@@ -1,0 +1,22 @@
+CreateStaircase(7,12,3,24,23,20,1.5);
+
+//                 stairWidth,stairDepth,stairHeight,stairOffset,stairNumber,stepRotation,stepHeight
+proc CreateStaircase (float $sW, float $sD, float $sH, float $sO, float $sN, float $spR, float $spH)
+{
+    float $spRR = $spR;
+    float $spHH = $spH;
+    string $stair[] = `polyCube -w $sW -h $sH -d $sD -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1`;
+    move -relative $sO ($sH*.5) 0;
+    move -r ("-" +$sO) 0 0 ($stair[0] + ".scalePivot") ($stair[0] + ".rotatePivot") ;
+
+    for ($i=0; $i<$sN; $i++)
+    {
+        string $stair[] = `polyCube -w $sW -h $sH -d $sD -sx 1 -sy 1 -sz 1 -ax 0 1 0 -cuv 4 -ch 1`;
+        move -relative $sO ($sH*.5) 0;
+        move -r ("-" +$sO) 0 0 ($stair[0] + ".scalePivot") ($stair[0] + ".rotatePivot") ;
+        rotate -r -os -fo 0 $spRR 0 ;
+        move -relative 0 $spHH 0;
+        $spRR += $spR;
+        $spHH += $spH;
+    }
+}
