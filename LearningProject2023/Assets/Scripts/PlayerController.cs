@@ -18,12 +18,14 @@ public class PlayerController : MonoBehaviour
     public bool isShooting = false;
 
     private Rigidbody playerRb;
+    private Animator characterAnims;
     
     public UnityEvent playSound;
     
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        characterAnims = GetComponent<Animator>();
     }
    
     void Update()
@@ -43,7 +45,24 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(Vector3.right * (horizontalInput * Time.deltaTime * speed));
         }
-        
+
+        if (horizontalInput > 0 && !isShooting)
+        {
+            characterAnims.SetBool("WalkingForward", true);
+        }
+        else
+        {
+            characterAnims.SetBool("WalkingForward", false);
+        }
+        if (horizontalInput < 0 && !isShooting)
+        {
+            characterAnims.SetBool("WalkingBackward", true);
+        }
+        else
+        {
+            characterAnims.SetBool("WalkingBackward", false);
+        }
+
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && (isOnGround || isOnPlatform) && (!isShooting))
         {
