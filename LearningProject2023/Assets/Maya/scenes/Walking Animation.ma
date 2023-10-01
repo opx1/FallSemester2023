@@ -1,6 +1,6 @@
 //Maya ASCII 2023 scene
 //Name: Walking Animation.ma
-//Last modified: Sat, Sep 30, 2023 09:35:57 PM
+//Last modified: Sat, Sep 30, 2023 10:45:44 PM
 //Codeset: 1252
 file -rdi 1 -ns "Ultimate_Walker_Rig" -rfn "Ultimate_Walker_RigRN" -op "v=0;"
 		 -typ "mayaAscii" "C:/Users/ferri/Documents/GitKraken/FallSemester2023/LearningProject2023/Assets/Maya//scenes/Ultimate_Walker_Rig.ma";
@@ -16,7 +16,7 @@ fileInfo "product" "Maya 2023";
 fileInfo "version" "2023";
 fileInfo "cutIdentifier" "202211021031-847a9f9623";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "AD878CE8-443E-9506-FC9E-9B9AF10294D8";
+fileInfo "UUID" "9252C4C7-4651-E4D6-EA02-73B61F5D6E56";
 createNode transform -s -n "persp";
 	rename -uid "3C4D983A-4EC9-FF75-13F3-C8BE8AA43B9D";
 	setAttr ".v" no;
@@ -353,7 +353,7 @@ createNode script -n "uiConfigurationScriptNode";
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
 	rename -uid "8415CB2E-418F-67B2-00C8-E3A56BC5FD79";
-	setAttr ".b" -type "string" "playbackOptions -min 102 -max 126 -ast 0 -aet 126 ";
+	setAttr ".b" -type "string" "playbackOptions -min 0 -max 126 -ast 0 -aet 126 ";
 	setAttr ".st" 6;
 createNode animCurveTL -n "CTRL_Main_translateX";
 	rename -uid "9A32CF97-4E1D-0915-42FF-118F28124247";
@@ -1667,8 +1667,8 @@ createNode animCurveTA -n "CTRL_Main_rotateZ";
 		0 0 0 0 0 0 0 0 0 0.73034871834401516 0.69381531047464995 0.54098271152272481 0.95976263994574418 
 		0.95976264316354731;
 select -ne :time1;
-	setAttr ".o" 117;
-	setAttr ".unw" 117;
+	setAttr ".o" 126;
+	setAttr ".unw" 126;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1

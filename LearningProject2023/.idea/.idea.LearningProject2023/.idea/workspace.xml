@@ -3,12 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9c880f45-8e4d-45e5-96b2-95e62214e518" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LearningProject2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LearningProject2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/CharactetAnims.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/CharactetAnims.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Maya/scenes/Walking Animation.ma" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Maya/scenes/Walking Animation.ma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Maya/scenes/Walking Animation.ma.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Maya/scenes/Walking Animation.ma.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WalkingAnimation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WalkingAnimation.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Death.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Death.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +75,7 @@
       <workItem from="1693541348913" duration="2090000" />
       <workItem from="1693607445581" duration="14301000" />
       <workItem from="1695842729842" duration="2197000" />
-      <workItem from="1696127981142" duration="5035000" />
+      <workItem from="1696127981142" duration="5843000" />
     </task>
     <servers />
   </component>
