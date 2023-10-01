@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround = true;
     public bool isOnPlatform = true;
     public bool isShooting = false;
+    public bool isJumping = false;
 
     private Rigidbody playerRb;
     private Animator characterAnims;
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour
    
     void Update()
     {
+        
         if (transform.position.x < -leftxRange)
         {
             transform.position = new Vector3(-leftxRange, transform.position.y, transform.position.z);
@@ -41,7 +45,7 @@ public class PlayerController : MonoBehaviour
         }
         
         horizontalInput = Input.GetAxis("Horizontal");
-        if (!isShooting)
+        if (!isShooting && !isJumping)
         {
             transform.Translate(Vector3.right * (horizontalInput * Time.deltaTime * speed));
         }
@@ -63,9 +67,16 @@ public class PlayerController : MonoBehaviour
             characterAnims.SetBool("WalkingBackward", false);
         }
 
-
         if (Input.GetKeyDown(KeyCode.UpArrow) && (isOnGround || isOnPlatform) && (!isShooting))
         {
+            isJumping = true;
+            characterAnims.SetTrigger("Prejump");
+        }
+        
+        if (Input.GetKeyUp(KeyCode.UpArrow) && (isOnGround || isOnPlatform) && (!isShooting))
+        {
+            isJumping = false;
+            characterAnims.SetTrigger("Jump");
             playSound.Invoke();
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
