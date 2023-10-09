@@ -1,0 +1,37 @@
+
+
+//---needs---
+//-determine range x,y,z
+//-what is selected? stora as variables
+//random variables 
+//- how many duplicates?
+
+//---push goals---
+//randomize rotation, scale, etc.  
+
+//---workflow---
+//select object(s)
+
+//for ($i = 0; $i<size($testString); i++)
+//{
+  //  print ($testString);
+//}
+
+placementGenerator(xMin, xMax, yMin, yMax, zMin, zMax, numDups)
+
+    store object(s) name as varible 
+    ls -sels // (ex: ["rock1", "rock2", "rock3"])
+
+    //looping through each object selection
+    for($i=0, $i < size(SEL_ARRAY); $i++)
+    {
+        //perform actions for each individual object
+        for($j=0; $j<$numDups; $j++)
+        {
+            //duplicate current object
+
+            //generate a new x,y, and z value based on range arguments
+
+            //translate current object to new position
+        }
+    }
