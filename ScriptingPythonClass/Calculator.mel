@@ -1,5 +1,5 @@
 {
-proc float Addition(float $values[])
+global proc float Addition(float $values[])
 {
     int $index = size($values);
     float $sum = 0;
@@ -12,14 +12,9 @@ proc float Addition(float $values[])
     return $sum;
 }
 
-float $input[] = { 7,14 };
-float $total = Addition($input);
-print ("\n" + "=" + $total + "\n");
-}
 
 
-{
-proc float Subtraction(float $values[])
+global proc float Subtraction(float $values[])
 {
     int $index = size($values);
     float $sum = $values[0] + $values[0];
@@ -32,14 +27,10 @@ proc float Subtraction(float $values[])
     return $sum;
 }
 
-float $input[] = { 438,39,123 };
-float $total = Subtraction($input);
-print ("\n" + "=" + $total + "\n");
-}
 
 
-{
-proc float Multiplication(float $values[])
+
+global proc float Multiplication(float $values[])
 {
     int $index = size($values);
     float $sum = 1;
@@ -52,13 +43,9 @@ proc float Multiplication(float $values[])
     return $sum;
 }
 
-float $input[] = { 3.1415926535897, 8 };
-float $total = Multiplication($input);
-print ("\n" + "=" + $total + "\n");
-}
 
-{
-proc float Division(float $values[])
+
+global proc float Division(float $values[])
 {
     int $index = size($values);
     float $sum = $values[0] * $values[0];
@@ -71,14 +58,10 @@ proc float Division(float $values[])
     return $sum;
 }
 
-float $input[] = { 100,2,5 };
-float $total = Division($input);
-print ("\n" + "=" + $total + "\n");
-}
 
 
-{
-proc float Power(float $x, int $n)
+
+global proc float Power(float $x, int $n)
 {
     float $sum = pow($x, $n);
     print ($x + "^" + $n);
@@ -86,13 +69,12 @@ proc float Power(float $x, int $n)
     return $sum;
 }
 
-float $total = Power(2,4);
-print ("\n" + "=" + $total + "\n");
-}
 
 
-{
-proc float Mean(float $values[])
+
+
+
+global proc float Mean(float $values[])
 {
     int $index = size($values);
     float $sum = 0;
@@ -108,14 +90,10 @@ proc float Mean(float $values[])
     return $sum;
 }
 
-float $input[] = { 7,8,9 };
-float $total = Mean($input);
-print ("\n" + "=" + $total + "\n");
-}
 
 
-{
-proc float Median(float $values[])
+
+global proc float Median(float $values[])
 {
     float $sorted[] = sort($values);
     int $index = size($sorted);
@@ -127,7 +105,51 @@ proc float Median(float $values[])
     return $sum;
 }
 
-float $input[] = { 2,5,8,9,14,7,4,3,20,16};
-float $total = Median($input);
-print ("\n" + "Median =" + $total + "\n");
+
+
+global proc Calculator(int $operation, float $input[])
+{
+    // 1 = +, 2 = -, 3 = *, 4 = /, 5 = ^, 6 = Mean, 7 = Median.
+    if ($operation == 1)
+    {
+        float $total = Addition($input);
+        print ("\n" + "=" + $total + "\n");
+    }
+    else if ($operation == 2)
+    {
+        float $total = Subtraction($input);
+        print ("\n" + "=" + $total + "\n"); 
+    }
+    else if ($operation == 3)
+    {
+        float $total = Multiplication($input);
+        print ("\n" + "=" + $total + "\n");
+    }
+    else if ($operation == 4)
+    {
+        float $total = Division($input);
+        print ("\n" + "=" + $total + "\n");
+
+    }
+    else if ($operation == 5)
+    {
+        float $total = Power($input[0],$input[1]);
+        print ("\n" + "=" + $total + "\n");
+    }
+    else if ($operation == 6)
+    {
+        float $total = Mean($input);
+        print ("\n" + "=" + $total + "\n");
+    }
+    else if ($operation == 7)
+    {
+        float $total = Median($input);
+        print ("\n" + "Median =" + $total + "\n");
+
+    }
+}
+
+float $math[] = {1,2,3,4,5} ;
+Calculator(6, $math);
+
 }
