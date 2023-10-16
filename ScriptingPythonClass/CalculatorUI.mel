@@ -164,10 +164,7 @@ global proc CalculatorUI()
     if (`window -exists $mWindow`)
         deleteUI $mWindow;
 
-    $mWindow = `window - title "Calculator"
-                    -widthHeight 300 400
-                    -resizeToFitChildren 1
-                    $mWindow;
+    $mWindow = `window - title "Calculator"  -widthHeight 300 400 -resizeToFitChildren 1  $mWindow;
     string $mColumn = `columnLayout -parent $mWindow -adjustanleColumn 1`;
     optionVar -stringValue "ftNumberField" `floatFieldGrp`;
     optionVar -stringValue "ftOperation" `radioButtonGrp -numberOfRadioButtons 7 -labelArray7 "Addition" "Subtraction" "Multiplication" "Dividion" "Power" "Mean" "Median"`;
