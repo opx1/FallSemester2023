@@ -100,7 +100,7 @@ global proc float Median(float $values[])
 
 
 
-global proc Calculator(int $operation, float $input[])
+global proc string Calculator(int $operation, float $input[])
 {
     // 1 = +, 2 = -, 3 = *, 4 = /, 5 = ^, 6 = Mean, 7 = Median.
     if ($operation == 1)
@@ -157,7 +157,7 @@ global proc FT_ButtonCmd()
 
 }
 
-global prc CalculatorUI()
+global proc CalculatorUI()
 {
     string $mWindow = "ftWindow";
 
