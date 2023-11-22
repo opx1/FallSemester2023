@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c880f45-8e4d-45e5-96b2-95e62214e518" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LearningProject2023/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LearningProject2023/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LearningProject2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LearningProject2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/CharactetAnims.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/CharactetAnims.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Maya/scenes/PalBotWalkCycle.ma" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Maya/scenes/PalBotWalkCycle.ma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Maya/scenes/PalBotWalkCycle.ma.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Maya/scenes/PalBotWalkCycle.ma.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/NavMesh.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/NavMesh.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WalkingAnimation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WalkingAnimation.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +77,7 @@
       <workItem from="1695842729842" duration="2197000" />
       <workItem from="1696127981142" duration="6410000" />
       <workItem from="1700099345508" duration="1122000" />
-      <workItem from="1700587810201" duration="2495000" />
+      <workItem from="1700587810201" duration="2499000" />
     </task>
     <servers />
   </component>
