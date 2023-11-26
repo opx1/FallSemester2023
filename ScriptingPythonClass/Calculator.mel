@@ -6,6 +6,7 @@ global proc float Addition(float $values[])
     for ($num in $values)
     {
         $sum += $num;
+        print ($num + "+");
     }
 
     return $sum;
@@ -20,6 +21,7 @@ global proc float Subtraction(float $values[])
     for ($num in $values)
     {
         $sum -= $num;
+        print ($num + "-");
     }
 
     return $sum;
@@ -35,6 +37,7 @@ global proc float Multiplication(float $values[])
     for ($num in $values)
     {
         $sum *= $num;
+        print ($num + "*");
     }
 
     return $sum;
@@ -49,6 +52,7 @@ global proc float Division(float $values[])
     for ($num in $values)
     {
         $sum /= $num;
+        print ($num + "/");
     }
 
     return $sum;
@@ -60,7 +64,8 @@ global proc float Division(float $values[])
 global proc float Power(float $x, int $n)
 {
     float $sum = pow($x, $n);
-    
+    print ($x + "^" + $n);
+
     return $sum;
 }
 
@@ -80,7 +85,8 @@ global proc float Mean(float $values[])
     }
 
     $sum /= $index;
-    
+    print ("/" + $index);
+
     return $sum;
 }
 
@@ -94,6 +100,7 @@ global proc float Median(float $values[])
     int $number = $index / 2;
 
     float $sum = $sorted[$number];
+    print ($sorted);
 
     return $sum;
 }
@@ -106,74 +113,43 @@ global proc Calculator(int $operation, float $input[])
     if ($operation == 1)
     {
         float $total = Addition($input);
-        return ($total);
+        print ("\n" + "=" + $total + "\n");
     }
     else if ($operation == 2)
     {
         float $total = Subtraction($input);
-        return ($total); 
+        print ("\n" + "=" + $total + "\n"); 
     }
     else if ($operation == 3)
     {
         float $total = Multiplication($input);
-        return ($total);
+        print ("\n" + "=" + $total + "\n");
     }
     else if ($operation == 4)
     {
         float $total = Division($input);
-        return ($total);
+        print ("\n" + "=" + $total + "\n");
 
     }
     else if ($operation == 5)
     {
         float $total = Power($input[0],$input[1]);
-        return ($total);
+        print ("\n" + "=" + $total + "\n");
     }
     else if ($operation == 6)
     {
         float $total = Mean($input);
-        return ($total);
+        print ("\n" + "=" + $total + "\n");
     }
     else if ($operation == 7)
     {
         float $total = Median($input);
-        return ($total);
+        print ("\n" + "Median =" + $total + "\n");
 
     }
 }
-}
 
-global proc FT_ButtonCmd()
-{
-    string $numberField = `optionVar -q "ftNumberField"`;
-    string $operField = `optionVar -q "ftOperation"`;
-    string $resultField = `optionVar -q "ftResult"`;
-
-    string $num = `floatFieldGrp -q -value $numberField`;
-    string $oper = `radioButtonGrp -q -select $operField`;
-
-    string $result = Calculator($oper, $num);
-    textField -e -text $result $resultField;
+float $math[] = {1,2,3,4,5} ;
+Calculator(6, $math);
 
 }
-
-global prc CalculatorUI()
-{
-    string $mWindow = "ftWindow";
-
-    if (`window -exists $mWindow`)
-        deleteUI $mWindow;
-
-    $mWindow = `window - title "Calculator"
-                    -widthHeight 300 400
-                    -resizeToFitChildren 1
-                    $mWindow;
-    string $mColumn = `columnLayout -parent $mWindow -adjustanleColumn 1`;
-    optionVar -stringValue "ftNumberField" `floatFieldGrp`;
-    optionVar -stringValue "ftOperation" `radioButtonGrp -numberOfRadioButtons 7 -labelArray7 "Addition" "Subtraction" "Multiplication" "Dividion" "Power" "Mean" "Median"`;
-    button -parent $mColumn -label "Go" -command "FT_ButtonCmd";
-    optionVar -stringValue "ftResult" `textField -parent $mColumn -editable 0`;
-    showWindow $mWindow;
-}
-
-CalculatorUI();

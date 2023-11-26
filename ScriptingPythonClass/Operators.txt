@@ -35,7 +35,7 @@ Arithmetic
         $num = $num + 10;
         $num += 10;
 
--+ : Subtract value to variable and reassign to variable
+-= : Subtract value to variable and reassign to variable
 
 *= : Multiply
 /= : Divide
