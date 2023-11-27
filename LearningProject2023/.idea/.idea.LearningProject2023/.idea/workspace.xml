@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c880f45-8e4d-45e5-96b2-95e62214e518" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LearningProject2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LearningProject2023/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Maya/scenes/PalBotWalkCycle.ma" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Maya/scenes/PalBotWalkCycle.ma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +35,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.13f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\ferri\Documents\GitKraken\FallSemester2023\LearningProject2023 -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\ferri\Documents\GitKraken\FallSemester2023\LearningProject2023" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -76,6 +76,8 @@
       <workItem from="1693607445581" duration="14301000" />
       <workItem from="1695842729842" duration="2197000" />
       <workItem from="1696127981142" duration="6410000" />
+      <workItem from="1700099345508" duration="1122000" />
+      <workItem from="1700587810201" duration="2499000" />
     </task>
     <servers />
   </component>
