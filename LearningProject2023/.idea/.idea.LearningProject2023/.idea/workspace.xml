@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c880f45-8e4d-45e5-96b2-95e62214e518" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Maya/scenes/PalBotWalkCycle.ma" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Maya/scenes/PalBotWalkCycle.ma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +78,7 @@
       <workItem from="1696127981142" duration="6410000" />
       <workItem from="1700099345508" duration="1122000" />
       <workItem from="1700587810201" duration="2499000" />
+      <workItem from="1701234369973" duration="7000" />
     </task>
     <servers />
   </component>
