@@ -645,7 +645,8 @@ PrefabInstance:
       value: PalBotWalkCycle (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1558215858864531158, guid: 9e1ce7bb6c9f29644aa2d8ef1f502530, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e1ce7bb6c9f29644aa2d8ef1f502530, type: 3}
@@ -772,7 +773,8 @@ PrefabInstance:
       value: PalBotWalkCycle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1558215858864531158, guid: 9e1ce7bb6c9f29644aa2d8ef1f502530, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e1ce7bb6c9f29644aa2d8ef1f502530, type: 3}
@@ -899,7 +901,8 @@ PrefabInstance:
       value: PalBotWalkCycle (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1558215858864531158, guid: 9e1ce7bb6c9f29644aa2d8ef1f502530, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e1ce7bb6c9f29644aa2d8ef1f502530, type: 3}
