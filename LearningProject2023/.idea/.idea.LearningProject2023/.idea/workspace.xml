@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c880f45-8e4d-45e5-96b2-95e62214e518" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LearningProject2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LearningProject2023/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/WalkingAnimation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/WalkingAnimation.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +17,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DestroyBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FallingPlatform.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FiringProjectile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PowerUpJump.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -79,6 +83,7 @@
       <workItem from="1700099345508" duration="1122000" />
       <workItem from="1700587810201" duration="2499000" />
       <workItem from="1701234369973" duration="7000" />
+      <workItem from="1702238602393" duration="4515000" />
     </task>
     <servers />
   </component>

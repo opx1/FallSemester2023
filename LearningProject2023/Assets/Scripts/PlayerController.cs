@@ -14,14 +14,18 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     public float leftxRange = 13.0f;
     public float rightxRange = 13.0f;
+    public int powerUpDuration = 5;
+
 
     public bool isOnGround = true;
     public bool isOnPlatform = true;
     public bool isShooting = false;
     public bool isJumping = false;
+    public bool isPowered = false;
 
     private Rigidbody playerRb;
     private Animator characterAnims;
+    public Behaviour playerHalo;
     
     public UnityEvent playSound;
     
@@ -91,6 +95,13 @@ public class PlayerController : MonoBehaviour
         {
             isShooting = false;
         }
+
+        if (isPowered == true)
+        {
+            jumpForce = 15;
+            playerHalo.enabled = true;
+            StartCoroutine(PowerupCooldown());
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -105,4 +116,12 @@ public class PlayerController : MonoBehaviour
             isOnPlatform = true;
         }
     }
+    IEnumerator PowerupCooldown()
+    {
+        yield return new WaitForSeconds(powerUpDuration);
+        isPowered = false;
+        jumpForce = 10;
+        playerHalo.enabled = false;
+    }
 }
+
