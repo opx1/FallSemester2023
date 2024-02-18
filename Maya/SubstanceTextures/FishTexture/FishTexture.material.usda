@@ -1,0 +1,114 @@
+#usda 1.0
+(
+    "Exported from Adobe Substance 3D Painter 9.1.2"
+    defaultPrim = "KoiFishRetopo2_obj"
+)
+
+def "KoiFishRetopo2_obj"
+{
+    def Scope "material"
+    {
+        def Material "initialShadingGroup" (
+            customData = {
+                dictionary adobe = {
+                    dictionary painter = {
+                        asset painterProject_spp = @C:/Users/ferri/Documents/GitKraken/FallSemester2023/CharacterCreation/FishTexture.spp@
+                    }
+                }
+            }
+        )
+        {
+            asset inputs:basecolor_tex = @FishTexture_textures/KoiFishRetopo2_initialShadingGroup_BaseColor.1001.png@
+            asset inputs:compositedNormalGL_tex = @FishTexture_textures/KoiFishRetopo2_initialShadingGroup_Normal.1001.png@
+            asset inputs:height_tex = @FishTexture_textures/KoiFishRetopo2_initialShadingGroup_Height.1001.png@
+            asset inputs:metallic_tex = @FishTexture_textures/KoiFishRetopo2_initialShadingGroup_Metalness.1001.png@
+            asset inputs:roughness_tex = @FishTexture_textures/KoiFishRetopo2_initialShadingGroup_Roughness.1001.png@
+            token outputs:displacement.connect = </KoiFishRetopo2_obj/material/initialShadingGroup/UsdPreviewSurface/ShaderUsdPreviewSurface.outputs:displacement>
+            token outputs:surface.connect = </KoiFishRetopo2_obj/material/initialShadingGroup/UsdPreviewSurface/ShaderUsdPreviewSurface.outputs:surface>
+
+            def NodeGraph "UsdPreviewSurface"
+            {
+                def Shader "ShaderUsdPreviewSurface"
+                {
+                    uniform token info:id = "UsdPreviewSurface"
+                    float3 inputs:diffuseColor.connect = </KoiFishRetopo2_obj/material/initialShadingGroup/UsdPreviewSurface/diffuseColorTextureShader.outputs:rgb>
+                    float inputs:metallic.connect = </KoiFishRetopo2_obj/material/initialShadingGroup/UsdPreviewSurface/metallicTextureShader.outputs:r>
+                    normal3f inputs:normal.connect = </KoiFishRetopo2_obj/material/initialShadingGroup/UsdPreviewSurface/normalTextureShader.outputs:rgb>
+                    float inputs:roughness.connect = </KoiFishRetopo2_obj/material/initialShadingGroup/UsdPreviewSurface/roughnessTextureShader.outputs:r>
+                    token outputs:displacement
+                    token outputs:surface
+                }
+
+                def Shader "TexCoordReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "diffuseColorTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file.connect = </KoiFishRetopo2_obj/material/initialShadingGroup.inputs:basecolor_tex>
+                    float2 inputs:st.connect = </KoiFishRetopo2_obj/material/initialShadingGroup/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float3 outputs:rgb
+                }
+
+                def Shader "roughnessTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file.connect = </KoiFishRetopo2_obj/material/initialShadingGroup.inputs:roughness_tex>
+                    float2 inputs:st.connect = </KoiFishRetopo2_obj/material/initialShadingGroup/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:r
+                }
+
+                def Shader "metallicTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    asset inputs:file.connect = </KoiFishRetopo2_obj/material/initialShadingGroup.inputs:metallic_tex>
+                    float2 inputs:st.connect = </KoiFishRetopo2_obj/material/initialShadingGroup/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:r
+                }
+
+                def Shader "normalTextureShader"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (-1, -1, -1, 0)
+                    asset inputs:file.connect = </KoiFishRetopo2_obj/material/initialShadingGroup.inputs:compositedNormalGL_tex>
+                    float4 inputs:scale = (2, 2, 2, 1)
+                    float2 inputs:st.connect = </KoiFishRetopo2_obj/material/initialShadingGroup/UsdPreviewSurface/TexCoordReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    normal3f outputs:rgb
+                }
+            }
+        }
+    }
+
+    over "KoiFishRetopo2_Group63109_SecondKoiRetopo"
+    {
+        over "KoiFishRetopo2_Group63109_SecondKoiRetopo" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </KoiFishRetopo2_obj/material/initialShadingGroup>
+        }
+    }
+
+    over "KoiFishRetopo2_Group63109_SecondKoiRetopo_KoiFishRetopo2_pSphere1"
+    {
+        over "KoiFishRetopo2_Group63109_SecondKoiRetopo_KoiFishRetopo2_pSphere1" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </KoiFishRetopo2_obj/material/initialShadingGroup>
+        }
+    }
+}
+
