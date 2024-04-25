@@ -59,6 +59,8 @@ def create_joint_controls():
 # Call the function
 create_joint_controls()
 
+
+
 import maya.cmds as cmds
 
 def add_constraints_for_matching_controls_and_joints():
