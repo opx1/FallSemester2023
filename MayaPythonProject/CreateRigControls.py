@@ -59,7 +59,7 @@ def create_joint_controls():
 # Call the function
 create_joint_controls()
 
-
+#Seperate script here
 
 import maya.cmds as cmds
 
