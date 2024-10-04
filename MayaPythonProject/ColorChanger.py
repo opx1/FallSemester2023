@@ -30,3 +30,8 @@ def change_override_color(selected_objects, color_index):
 # Set color index to 13 (red) for the selected objects
 selected_objects = cmds.ls(selection=True)
 change_override_color(selected_objects, 13)
+
+# 13 red
+# 6 light blue
+# 5 dark blue
+# 14 green
