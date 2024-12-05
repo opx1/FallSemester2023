@@ -1,0 +1,10 @@
+string $sels[] = `ls -sl`;
+string $sel = $sels[0];
+
+float $pos[] = `xform -q -ws -rotatePivot $sel`;
+
+string $locs[] = `spaceLocator -p 0 0 0`;
+//               ["locator1"]
+string $loc = $locs[0];
+
+xform -ws -translation $pos[0] $pos[1] $pos[2] $loc;
