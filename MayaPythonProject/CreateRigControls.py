@@ -64,20 +64,30 @@ create_joint_controls()
 import maya.cmds as cmds
 
 def add_constraints_for_matching_controls_and_joints():
-    selected_controls = cmds.ls("*_ctrl", type='transform')
+    # Get only the currently selected controls
+    selected_controls = cmds.ls(selection=True, type='transform')
 
     if not selected_controls:
-        cmds.warning("Could not find any controls.")
+        cmds.warning("No controls selected.")
         return
 
     for control in selected_controls:
-        joint_name = control.replace("_ctrl", "_jnt")
-        if cmds.objExists(joint_name):
-            cmds.select(control, joint_name)
-            cmds.parentConstraint(weight=1)
-            cmds.scaleConstraint(weight=1)
+        # Check if the selected object is a control by ensuring it ends with "_ctrl"
+        if control.endswith("_ctrl"):
+            joint_name = control.replace("_ctrl", "_jnt")
+            if cmds.objExists(joint_name):
+                # Apply parent and scale constraints if they don't already exist
+                existing_parent_constraints = cmds.listRelatives(control, type='parentConstraint')
+                existing_scale_constraints = cmds.listRelatives(control, type='scaleConstraint')
+
+                if not existing_parent_constraints:
+                    cmds.parentConstraint(control, joint_name, weight=1)
+                if not existing_scale_constraints:
+                    cmds.scaleConstraint(control, joint_name, weight=1)
+            else:
+                cmds.warning("Could not find joint corresponding to control: {}".format(control))
         else:
-            cmds.warning("Could not find joint corresponding to control: {}".format(control))
+            cmds.warning("Selected object is not a control: {}".format(control))
 
 # Call the function
 add_constraints_for_matching_controls_and_joints()
